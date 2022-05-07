@@ -6,7 +6,9 @@ const LaunchItem = (props) => {
 
   useEffect(() => {
     async function fetchLaunchData() {
-      await fetch(`https://api.spacexdata.com/v5/launches/${props.launchId}`)
+      await fetch(`https://api.spacexdata.com/v5/launches/${props.launchId}`, {
+        method: "GET",
+      })
         .then((res) => res.json())
         .then((response) => {
           setLaunchData(response);
@@ -19,7 +21,7 @@ const LaunchItem = (props) => {
 
   return (
     <View>
-      <Text style={{ marginBottom: 3, fontSize: 18 }}>{launchData.name}</Text>
+      <Text style={{ marginVertical: 3, fontSize: 18 }}>{launchData.name}</Text>
     </View>
   );
 };

@@ -27,26 +27,40 @@ const Launch = (props) => {
       <Text style={{ marginVertical: 7 }}>
         <Text style={{ fontWeight: "bold", fontSize: 20 }}>Details: </Text>
         {launchData.details ? (
-          <Text style={{ fontSize: 16 }}>{launchData.details}</Text>
+          <Text style={styles.text}>{launchData.details}</Text>
         ) : (
-          <Text style={{ fontSize: 16 }}>No details found</Text>
+          <Text style={styles.text}>No details found</Text>
         )}
       </Text>
       <Text style={{ marginVertical: 7 }}>
         <Text style={{ fontWeight: "bold", fontSize: 20 }}>Date: </Text>
-        <Text style={{ fontSize: 16 }}>
+        <Text style={styles.text}>
           {new Date(launchData.date_unix * 1000).toUTCString()}
         </Text>
       </Text>
-      <Text>
+      <Text style={{ marginVertical: 7 }}>
         <Text style={{ fontWeight: "bold", fontSize: 20 }}>Reused: </Text>
         {launchData.fairings === undefined ? (
           <></>
         ) : (
-          <Text style={{ fontSize: 16 }}>
+          <Text style={styles.text}>
             {launchData.fairings === null || launchData.fairings.reused === null
-              ? "No data found"
+              ? "Relevent data not present"
               : launchData.fairings.reused === false
+              ? "No"
+              : "Yes"}
+          </Text>
+        )}
+      </Text>
+      <Text style={{ marginVertical: 7 }}>
+        <Text style={{ fontWeight: "bold", fontSize: 20 }}>Success: </Text>
+        {launchData.success === undefined ? (
+          <></>
+        ) : (
+          <Text style={styles.text}>
+            {launchData.success === null
+              ? "Relevent data not present"
+              : launchData.success === false
               ? "No"
               : "Yes"}
           </Text>
