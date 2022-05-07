@@ -8,7 +8,9 @@ const LaunchPads = (props) => {
 
   useEffect(() => {
     async function fetchLaunchpads() {
-      await fetch(`https://api.spacexdata.com/v4/launchpads`)
+      await fetch(`https://api.spacexdata.com/v4/launchpads`, {
+        method: "GET",
+      })
         .then((res) => res.json())
         .then((response) => {
           setLaunchpads(response);
@@ -64,6 +66,7 @@ const LaunchPads = (props) => {
                       if (index < 3)
                         return (
                           <TouchableOpacity
+                            key={index}
                             onPress={() =>
                               props.navigation.navigate("Launch", {
                                 id: launch,

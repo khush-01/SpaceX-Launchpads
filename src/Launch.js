@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text } from "react-native";
+import { View, Text } from "react-native";
 import React, { useEffect, useState } from "react";
 import styles from "./styles";
 
@@ -8,7 +8,9 @@ const Launch = (props) => {
 
   useEffect(() => {
     async function fetchLaunchData() {
-      await fetch(`https://api.spacexdata.com/v5/launches/${launchId}`)
+      await fetch(`https://api.spacexdata.com/v5/launches/${launchId}`, {
+        method: "GET",
+      })
         .then((res) => res.json())
         .then((response) => {
           setLaunchData(response);
@@ -33,8 +35,22 @@ const Launch = (props) => {
       <Text style={{ marginVertical: 7 }}>
         <Text style={{ fontWeight: "bold", fontSize: 20 }}>Date: </Text>
         <Text style={{ fontSize: 16 }}>
-          {new Date(launchData.date_unix * 1000).toLocaleDateString("en-US")}
+          {new Date(launchData.date_unix * 1000).toUTCString()}
         </Text>
+      </Text>
+      <Text>
+        <Text style={{ fontWeight: "bold", fontSize: 20 }}>Reused: </Text>
+        {launchData.fairings === undefined ? (
+          <></>
+        ) : (
+          <Text style={{ fontSize: 16 }}>
+            {launchData.fairings === null || launchData.fairings.reused === null
+              ? "No data found"
+              : launchData.fairings.reused === false
+              ? "No"
+              : "Yes"}
+          </Text>
+        )}
       </Text>
     </View>
   );
