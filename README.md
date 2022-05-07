@@ -1,6 +1,6 @@
 # SpaceX-Launchpads
 
-This project is developed using [SpaceX APIs](https://github.com/r-spacex/SpaceX-API/tree/master/docs). It provides details on the list of launchpads and their launches. This project is build using [React Native](https://reactnative.dev/) on JavaScript.
+This project is developed using [SpaceX APIs](https://github.com/r-spacex/SpaceX-API/tree/master/docs). It provides details on the list of launchpads and their launches. This project is build using [React Native](https://reactnative.dev/) on TypeScript.
 
 ## Features
 
