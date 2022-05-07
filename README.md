@@ -6,7 +6,7 @@ This project is developed using SpaceX APIs. It provides details on the list of 
 
 - Mobile Application consisting of 2 pages
 - Details of Launchpads with their launches
-- Clicking on a launch will their respective page
+- Clicking on a launch will open their respective page
 
 ## Preview
 
