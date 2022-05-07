@@ -2,9 +2,10 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import LaunchItem from "./LaunchItem";
 import styles from "./styles";
+import { Pad } from "./DataTypes";
 
-const LaunchPads = (props) => {
-  const [launchpads, setLaunchpads] = useState([]);
+const LaunchPads = (props: any) => {
+  const [launchpads, setLaunchpads] = useState([] as any);
 
   useEffect(() => {
     async function fetchLaunchpads() {
@@ -24,9 +25,9 @@ const LaunchPads = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>SpaceX Launchpads</Text>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View>
-          {launchpads.map((pad, index) => {
+          {launchpads.map((pad: Pad, index: number) => {
             return (
               <View
                 key={index}
@@ -38,16 +39,14 @@ const LaunchPads = (props) => {
               >
                 <Text style={styles.padName}>{pad.name}</Text>
                 <Text style={{ marginBottom: 5 }}>
-                  <Text style={{ fontWeight: "bold", fontSize: 20 }}>
-                    Details:{" "}
-                  </Text>
-                  <Text style={styles.text}>{pad.details}</Text>
+                  <Text style={styles.fieldTitle}>Details: </Text>
+                  <Text style={styles.fieldText}>{pad.details}</Text>
                 </Text>
                 <Text style={{ marginBottom: 5 }}>
-                  <Text style={{ fontWeight: "bold", fontSize: 20 }}>
-                    Status:{" "}
-                  </Text>
-                  <Text style={styles.text}>{pad.status.toUpperCase()}</Text>{" "}
+                  <Text style={styles.fieldTitle}>Status: </Text>
+                  <Text style={styles.fieldText}>
+                    {pad.status.toUpperCase()}
+                  </Text>{" "}
                 </Text>
                 <Text
                   style={{
@@ -62,7 +61,7 @@ const LaunchPads = (props) => {
                   <Text style={{ fontSize: 18 }}>No Launch Available</Text>
                 ) : (
                   <>
-                    {pad.launches.map((launch, index) => {
+                    {pad.launches.map((launch, index: number) => {
                       if (index < 3)
                         return (
                           <TouchableOpacity

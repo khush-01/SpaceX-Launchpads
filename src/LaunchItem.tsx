@@ -1,8 +1,9 @@
 import { View, Text } from "react-native";
 import React, { useEffect, useState } from "react";
+import { LaunchData } from "./DataTypes";
 
-const LaunchItem = (props) => {
-  const [launchData, setLaunchData] = useState({});
+const LaunchItem = (props: any) => {
+  const [launchData, setLaunchData] = useState({} as LaunchData);
 
   useEffect(() => {
     async function fetchLaunchData() {

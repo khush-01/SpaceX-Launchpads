@@ -35,9 +35,15 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 
-  text: {
+  fieldTitle: {
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+
+  fieldText: {
     color: "gray",
     fontSize: 16,
+    marginBottom: 7,
   },
 });
 
