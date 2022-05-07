@@ -10,13 +10,4 @@ This project is developed using [SpaceX APIs](https://github.com/r-spacex/SpaceX
 
 ## Preview
 
-|               **Page 1**                |               **Page 2**                |
-| :-------------------------------------: | :-------------------------------------: |
-| <img src="assets/page1.jpg" width=200 > | <img src="assets/page2.jpg" width=200 > |
-
-<style>
-  td, th, tr {
-    border: none !important;
-    padding: 10px 30px !important;
-  }
-</style>
+<img src="assets/page1.jpg" width=200 height=450 alt="Page 1" > &nbsp;&nbsp; <img src="assets/page2.jpg" width=200 height=450 alt="Page 2" >
