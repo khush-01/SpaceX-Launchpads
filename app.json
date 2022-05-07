@@ -2,7 +2,7 @@
   "expo": {
     "name": "SpaceX-Launchpads",
     "slug": "SpaceX-Launchpads",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,18 +15,16 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.khush01.SpaceXLaunchpads"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "owner": "bakchod-testers"
+    "owner": "khush01"
   }
 }
